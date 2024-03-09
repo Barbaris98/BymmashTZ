@@ -3,7 +3,120 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <link href="FileStyle.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            background-color: lightgray;
+            font-family: Arial, 'Times New Roman';
+            margin: 0 auto;
+            max-width: 1500px;
+            border: solid 4px white;
+        }
+
+        header {
+            display: block;
+            background-color: Orange;
+            color: White;
+            text-align: center;
+        }
+
+        .centr {
+            text-align: center;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .h3Radius {
+            display: block;
+            background-color: deepskyblue;
+            color: White;
+            text-align: center;
+            /*-webkit - для Chrome и Safari*/
+            -webkit-border-radius: 10px;
+            /*-moz- для Mozilla*/
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        h3 {
+            color: Orange;
+            text-align: center;
+        }
+
+        h4 {
+            color: Orange;
+            background-color: White;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            text-align: left;
+            padding-left: 20px;
+            position: relative;
+            left: -240px;
+            top: -525px;
+        }
+
+        h5 {
+            color: Orange;
+            text-align: center;
+        }
+
+        nav {
+            width: 20%;
+            float: left;
+        }
+
+            nav a:link, nav a:visited {
+                display: block;
+                font-weight: bold;
+                padding: 10px;
+                text-decoration: none;
+                margin: 5px;
+            }
+
+            nav a:hover {
+                color: White;
+                background-color: Orange;
+            }
+
+        section {
+            display: block;
+            width: 60%;
+            float: left;
+        }
+
+        article h3 {
+            display: block;
+            background-color: deepskyblue;
+            color: White;
+            text-align: center;
+            /*-webkit - для Chrome и Safari*/
+            -webkit-border-radius: 10px;
+            /*-moz- для Mozilla*/
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        article p {
+            margin: 10px;
+            text-align: justify;
+        }
+
+        aside {
+            float: left;
+            width: 20%;
+        }
+
+        footer {
+            clear: both;
+            color: white;
+            background-color: Orange;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,6 +125,7 @@
         <div class="timeNow"></div>
     </header>
     <nav>
+        <h3 class="h3Radius">Путеводитель по сайту</h3>
         <h3 class="h3Radius">Путеводитель по сайту</h3>
         <a href="index.html">Главная</a>
         <a href="index.html">ГОСТы</a>
@@ -26,6 +140,41 @@
                 <p>
                     Припуски и предельные отклонения для поковок типа раскатанных колец следует выбирать в соответствии с таблицей.
                 </p>
+                <div class="centr">
+                    <img src="Pic/Pic_2_Table_01.png" alt="Error image" width="1000" />
+                </div>
+                <div class="centr">
+                    <img src="Pic/Pic_2_Table_02.png" alt="Error image" width="1000" />
+                </div>
+                <div class="centr">
+                    <img src="Pic/Pic_2_Table_03.png" alt="Error image" width="1000" />
+                </div>
+
+                <h2>Введите начальные данные</h2>
+                <div>
+                    <form method="post">
+                        <label>Введите начальные данные(для одной детали
+                            без напуска на пробу и ТО):</label><br />
+                        <p>D: </p>
+                        <input type="number" name="number_D" /><br />
+
+                        <p>d: </p>
+                        <input type="number" name="number_d" /><br />
+
+                        <p>H: </p>
+                        <input type="number" name="number_H" /><br />
+
+                        <p>Припуск (в соответ с таблицей): </p>
+                        <input type="number" name="number_Pripysk_b" /><br />
+
+                        <p>Допуск (в соответ с таблицей, без +-): </p>
+                        <input type="number" name="number_Dopysk_delta" /><br />
+
+
+                        <br />
+                        <input type="submit" value="Send" />
+                    </form>
+                </div>
 
             </article>
             <article>
@@ -42,7 +191,7 @@
             </article>
         </section>
         <aside>
-            
+
         </aside>
     </main>
     <footer>
