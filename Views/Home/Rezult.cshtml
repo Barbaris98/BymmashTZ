@@ -1,5 +1,4 @@
 ﻿
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,17 +46,7 @@
             text-align: center;
         }
 
-        h4 {
-            color: Orange;
-            background-color: White;
-            -webkit-transform: rotate(-45deg);
-            -moz-transform: rotate(-45deg);
-            text-align: left;
-            padding-left: 20px;
-            position: relative;
-            left: -240px;
-            top: -525px;
-        }
+        
 
         h5 {
             color: Orange;
@@ -124,14 +113,10 @@
     <header>
         <h1>БУММАШ</h1>
         <h2>Результат расчета поковоки</h2>
-        
         <div class="timeNow"></div>
     </header>
     <nav>
-        <h3 class="h3Radius">Путеводитель по сайту</h3>
-        <h3 class="h3Radius">Путеводитель по сайту</h3>
-        <a href="index.html">Главная</a>
-        <a href="Rezult.html">Результат расчета</a>
+        <h3 class="h3Radius">/</h3>
     </nav>
     <main>
         <section>
@@ -141,51 +126,84 @@
                     <img src="Pic/Pic_1-27_Chert.png" alt="Error image" width="600" />
                 </div>
 
-
-                <h2>Введите начальные данные</h2>
+                <h2>Результат</h2>
                 <div>
-                    <form method="post">
-                        <label>
-                            Введите начальные данные(для одной детали
-                            без напуска на пробу и ТО):
-                        </label><br />
-                        <p>D: </p>
-                        <input type="number" name="number_D" /><br />
-
-                        <p>d: </p>
-                        <input type="number" name="number__d" /><br />
-
-                        <p>H: </p>
-                        <input type="number" name="number_H" /><br />
-
-                        <p>Припуск (в соответ с таблицей): </p>
-                        <input type="number" name="number_Pripysk_d" /><br />
-
-                        <p>Допуск (в соответ с таблицей, без +-): </p>
-                        <input type="number" name="number_Dopysk_delta" /><br />
-
-
-                        <br />
-                        <input type="submit" value="Send" />
-                    </form>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>D</th>
+                                <th>r</th>
+                                <th>H</th>
+                                <th>V</th>
+                                <th>m диск</th>
+                                <th>m диска с отв.</th>
+                                <th>Сферичность</th>
+                                <th>Масса общая</th>
+                            </tr>
+                            
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Диск min</th>
+                                <th>@ViewBag.D_Zagotovki_MIN</th>
+                                <th>@ViewBag.Radius_pokovki_MIN</th>
+                                <th>@ViewBag.H_Zagotovki_MIN</th>
+                                <th>@ViewBag.Obem_Zagotovki_MIN</th>
+                                <th>@ViewBag.Massa_zagotovki_MIN</th>
+                                <th>@ViewBag.Massa_zagotovki_Obshaya_MIN</th>
+                            </tr>
+                            <tr>
+                                <th>Диск номинал</th>
+                                <th>@ViewBag.D_Zagotovki_Nominal</th>
+                                <th>@ViewBag.Radius_pokovki_Nominal</th>
+                                <th>@ViewBag.H_Zagotovki_Nominal</th>
+                                <th>@ViewBag.Obem_Zagotovki_Nominal</th>
+                                <th>@ViewBag.Massa_zagotovki_Nominal</th>
+                                <th>@ViewBag.Massa_zagotovki_Obshaya_Nominal</th>
+                            </tr>
+                            <tr>
+                                <th>Диск max</th>
+                                <th>@ViewBag.D_Zagotovki_MAX</th>
+                                <th>@ViewBag.Radius_pokovki_MAX</th>
+                                <th>@ViewBag.H_Zagotovki_MAX</th>
+                                <th>@ViewBag.Obem_Zagotovki_MAX</th>
+                                <th>@ViewBag.Massa_zagotovki_MAX</th>
+                                <th>@ViewBag.Massa_zagotovki_Obshaya_MAX</th>
+                            </tr>
+                            <tr>
+                                <th>Отверстие min</th>
+                                <th>@ViewBag.d__Zagotovki_MIN</th>
+                                <th>@ViewBag.Radius_OTV_pokovki_MIN</th>
+                                <th>@ViewBag.H_Zagotovki_MIN</th>
+                                <th>@ViewBag.Obem_OTV_Zagotovki_MIN</th>
+                                <th>@ViewBag.Massa_OTV_zagotovki_MIN</th>
+                            </tr>
+                            <tr>
+                                <th>Отверстие номинал</th>
+                                <th>@ViewBag.d__Zagotovki_Nominal</th>
+                                <th>@ViewBag.Radius_OTV_pokovki_Nominal</th>
+                                <th>@ViewBag.H_Zagotovki_Nominal</th>
+                                <th>@ViewBag.Obem_OTV_Zagotovki_Nominal</th>
+                                <th>@ViewBag.Massa_OTV_zagotovki_Nominal</th>
+                            </tr>
+                            <tr>
+                                <th>Отверстие max</th>
+                                <th>@ViewBag.d__Zagotovki_MAX</th>
+                                <th>@ViewBag.Radius_OTV_pokovki_MAX</th>
+                                <th>@ViewBag.H_Zagotovki_MAX</th>
+                                <th>@ViewBag.Obem_OTV_Zagotovki_MAX</th>
+                                <th>@ViewBag.Massa_OTV_zagotovki_MAX</th>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
             </article>
-            <article>
-                <h3>Всероссийская конференция «Информационные технологии в науке, промышленности и образовании» начала работу</h3>
-                <div class="centr">
-                    <img src="Pic/p21.jpg" alt="Error image" width="600" />
-                </div>
-                <p>
-                    Сегодня, 25 мая, в ИжГТУ имени М.Т. Калашникова, начала работу Всероссийская научно-техническая конференция «Информационные технологии в науке, промышленности и образовании».
-                    С приветствием на пленарном заседании к участникам обратился Александр Викторович Губерт, и.о. ректора ИжГТУ имени М.Т. Калашникова: «Конференция стала у нас традиционной, ежегодной. Вопросы, которые рассматриваются на конференции, весьма важны для развития каждой отдельной отрасли — науки, промышленности, образования. Вместе с тем, эта тема сквозная. Мы понимаем, что все процессы связаны между собой. Поэтому хотелось бы, чтобы на конференции обсудили не только текущие задачи, но и поговорили о взаимодействии всех участников этого большого процесса. Хочу пожелать всем нам оптимизма, задора и плодотворной работы. Всем большое спасибо за участие».
-                    Модератор заседания, директор Института информатики и вычислительной техники Игорь Олегович Архипов во вступительном слове отметил: «Наша конференция не стоит на месте. Каждый год происходит что-то новое. В этом году у нас появилась новая секция — «Информационная безопасность». С этого года в рамках конференции мы будем ежегодно проводить и олимпиаду по кибербезопасности. А первых победителей, участников и преподавателей, которые готовили студентов, сегодня наградим».
-                    С докладами в очном и удаленном формате на пленарном заседании выступили представители науки и бизнеса.
-                </p>
-            </article>
+            
         </section>
         <aside>
-
+            <h3 class="h3Radius">/</h3>
         </aside>
     </main>
     <footer>
