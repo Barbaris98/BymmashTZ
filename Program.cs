@@ -5,7 +5,7 @@ namespace BymmashTZ
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            
             builder.Services.AddControllers();  // добавляем поддержку контроллеров
             builder.Services.AddControllersWithViews();// и представления
 
@@ -17,6 +17,8 @@ namespace BymmashTZ
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}");
+
+            
 
             app.Run();
             

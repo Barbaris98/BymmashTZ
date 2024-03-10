@@ -11,12 +11,13 @@ namespace BymmashTZ.Controllers
         }
 
         [HttpPost]
-        public int Index(int number_D, int number__d, int number_H, int number_Pripysk_d,
+        public IActionResult Index(int number_D, int number__d, int number_H, int number_Pripysk_d,
             int number_Dopysk_delta)
         {
             const decimal pi = 3.14M;
             const decimal Yd_ves = 0.0000000078M;
 
+            // считаем припуск 
             decimal H_Zagotovki = Convert.ToDecimal(number_H + number_Pripysk_d);
             decimal D_Zagotovki = Convert.ToDecimal(number_D + number_Pripysk_d);
             decimal d_Zagotovki = Convert.ToDecimal(number__d - number_Pripysk_d);
@@ -41,8 +42,19 @@ namespace BymmashTZ.Controllers
             decimal Massa_OTV_zagotovki_MAX = Yd_ves * Obem_OTV_Zagotovki_MAX;
             decimal Massa_OTV_zagotovki_MIN = Yd_ves * Obem_OTV_Zagotovki_MIN;
 
-            return number_D;
+            decimal Massa_zagotovki_Obshaya_MAX = Massa_zagotovki_MAX - Massa_OTV_zagotovki_MAX;
+            decimal Massa_zagotovki_Obshaya_MIN = Massa_zagotovki_MIN - Massa_OTV_zagotovki_MIN;
 
+            
+
+            return Redirect("Home/Rezult");
+
+        }
+
+        [HttpGet]
+        public IActionResult Rezult()
+        {
+            return View();
         }
 
     }
