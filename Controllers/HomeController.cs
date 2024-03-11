@@ -17,7 +17,7 @@ namespace BymmashTZ.Controllers
             const decimal pi = 3.14M;
             const decimal Yd_ves = 0.0000000078M;
 
-            // считаем припуск 
+            // Осн. расчёты
             decimal H_Zagotovki_Nominal = Convert.ToDecimal(number_H + number_Pripysk_d);
             decimal H_Zagotovki_MAX = Convert.ToDecimal(number_H + number_Pripysk_d + number_Dopysk_delta);
             decimal H_Zagotovki_MIN = Convert.ToDecimal(number_H + number_Pripysk_d - number_Dopysk_delta);
@@ -125,7 +125,6 @@ namespace BymmashTZ.Controllers
             ViewBag.Massa_zagotovki_Obshaya_Sverich_MAX = Massa_zagotovki_Obshaya_Sverich_MAX;
 
             return View("Rezult");
-            //return Redirect("Home/Rezult");
 
         }
 
